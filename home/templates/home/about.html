@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-{% block extra_css %}
+{% block extra_css %}\
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static "about/style.css"%}">
     <script defer src="{% static "about/app.js" %}"></script>
-    <h2> About </h2>
     <section class="hidden">
-        <h2>What Are We?</h2>
+        <h2 class="caption">What Are We?</h2>
         <p> At Movies Store, we offer a vast digital library
            that spans across genres, ensuring there's
            something for every movie lover. Browse our
@@ -16,20 +18,20 @@
            purchase your favorite titles and instantly
            stream them in high-definition quality.
         </p>
-    </section>
-    <section class="hidden">
-    <div id="thumbnail-holder1">
-        <div class="thumbnail"></div>>
-    </div>
-    <div id="thumbnail-holder2">
-        <div class="thumbnail"></div>
-    </div>
-    <div id="thumbnail-holder3">
-        <div class="thumbnail"></div>
-    </div>
-    </section>
-    <section class="hidden">
-    <p>
+        <div id="slot-machine">
+        <div class="thumbnail-holder hidden">
+            <div class="thumbnail thumbnail-left"><img src="{% static "/about/img/film.png" %}" alt="film_roll"></div>
+        </div>
+        <div class="thumbnail-holder hidden">
+            <div class="thumbnail thumbnail-center"><img src="{% static "/about/img/play.png" %}" alt="play_button"></div>
+        </div>
+        <div class="thumbnail-holder hidden">
+            <div class="thumbnail thumbnail-right"><img src="{% static "/about/img/film.png" %}" alt="film_roll">
+            </div>
+        </div>
+        </div>
+
+        <p>
         Discover the convenience of our digital platform,
         where you have the flexibility to watch movies
         on your preferred device, whether it's a smart
@@ -38,5 +40,9 @@
         next movie night pick has never been easier.
     </p>
     </section>
+    <section>
+
+    </section>
+
 {% endblock extra_css %}
 {% endblock content %}

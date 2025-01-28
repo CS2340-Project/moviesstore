@@ -1,20 +1,21 @@
 body {
     background-color: #202020;
-    padding: 0vw;
-    margin: 0;
+    font-family: "Space Mono", serif;
 }
 h2 {
     color: #d61212;
+
 }
 p {
-    justify-self: center;
     color: #fdfdfd;
 }
 section {
-    display: grid;
     place-items: center;
-    align-content: center;
-    min-height: 75vh;
+    min-height: 100vh;
+    scroll-snap-align: end;
+}
+.caption {
+    justify-self: center;
 }
 .hidden {
     opacity: 0;
@@ -23,6 +24,71 @@ section {
 .show {
     opacity: 1;
 }
+.thumbnail-holder {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    height: 18.5vw;
+    width: 18.5vw;
+    border: .25vw solid #fdfdfd;
+}
+.thumbnail-left {
+    animation: spin 1.7s linear infinite;
+}
+.thumbnail-right {
+    animation: spin-anti 1.7s linear infinite;
+}
+.thumbnail-center {
+    animation: none;
+}
 .thumbnail {
-    background-color: #fdfdfd;
+    height: 100%;
+    display: inline-block;
+
+}
+
+#slot-machine:hover .thumbnail-left {
+    animation: stop-left 1s;
+}
+#slot-machine:hover .thumbnail-right{
+    animation: stop-right 1s;
+}
+.thumbnail-center:hover {
+    cursor: pointer;
+}
+
+@keyframes spin {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-750%);
+    }
+
+}
+@keyframes spin-anti {
+    0% {
+        transform: translateY(-750%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes stop-left {
+    0% {
+        transform: translateY(-325%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+@keyframes stop-right {
+    0% {
+        transform: translateY(-325%);
+    }
+    100% {
+      transform: translateY(-660%);
+    }
+}
+#slot-machine{
 }
