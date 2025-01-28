@@ -8,14 +8,15 @@ h2 {
 }
 p {
     color: #fdfdfd;
+    margin: 1vh;
+    display: inline-grid;
+}
+img {
+    max-width: 100%;
 }
 section {
     place-items: center;
-    min-height: 100vh;
-    scroll-snap-align: end;
-}
-.caption {
-    justify-self: center;
+    margin: auto;
 }
 .hidden {
     opacity: 0;
@@ -28,15 +29,16 @@ section {
     overflow: hidden;
     display: inline-block;
     vertical-align: middle;
-    height: 18.5vw;
-    width: 18.5vw;
+    height: 15vw;
+    width: 15vw;
     border: .25vw solid #fdfdfd;
 }
 .thumbnail-left {
-    animation: spin 1.7s linear infinite;
+    animation: spin 2s linear infinite;
 }
 .thumbnail-right {
-    animation: spin-anti 1.7s linear infinite;
+    animation: spin-anti 2s linear infinite;
+    transform: translateY(-500%);
 }
 .thumbnail-center {
     animation: none;
@@ -46,7 +48,6 @@ section {
     display: inline-block;
 
 }
-
 #slot-machine:hover .thumbnail-left {
     animation: stop-left 1s;
 }
@@ -55,6 +56,9 @@ section {
 }
 .thumbnail-center:hover {
     cursor: pointer;
+    opacity: .5;
+    animation: zoom 1s;
+    transform: scale(150%);
 }
 
 @keyframes spin {
@@ -84,11 +88,21 @@ section {
 }
 @keyframes stop-right {
     0% {
-        transform: translateY(-325%);
+        transform: translateY(-225%);
     }
     100% {
-      transform: translateY(-660%);
+      transform: translateY(-500%);
     }
 }
-#slot-machine{
+@keyframes zoom {
+    0% {
+        transform: scale(100%);
+    }
+    100% {
+        transform: scale(150%)
+    }
+
+}
+#slot-machine {
+    margin: 1.5vh;
 }

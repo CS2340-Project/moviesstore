@@ -10,3 +10,11 @@ const observer = new IntersectionObserver((entries) => {
 });
 const hidden = document.querySelectorAll(".hidden");
 hidden.forEach((element) => observer.observe(element));
+const loginContainer = document.getElementById("login-container");
+function popUp() {
+    loginContainer.style.display = "grid";
+}
+loginContainer.addEventListener("click", popUp);
+function closeLogin() {
+    loginContainer.style.display = "none";
+}
