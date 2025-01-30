@@ -1,1 +1,10 @@
 .idea/
+
+*.pyc
+*.pyo
+__pycache__/
+*.so
+*.o
+*.a
+*.dll
+*.exe
