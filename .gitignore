@@ -1,11 +1,21 @@
-.idea/
-
+# Python compiled files
 *.pyc
-*.pyo
 __pycache__/
-*.so
-*.o
-*.a
-*.dll
-*.exe
-venv
+
+# Django specific
+*.log
+*.pot
+local_settings.py
+db.sqlite3
+
+# Virtual environment
+venv/
+env/
+
+# IDE and editor files
+.idea/
+.vscode/
+
+# Build artifacts
+dist/
+build/
