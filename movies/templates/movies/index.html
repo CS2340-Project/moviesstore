@@ -3,33 +3,33 @@
 {% load static %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static "movies/style.css"%}">
+    <script defer src="{% static "movies/app.js" %}"></script>
 <div class="p-3">
   <div class="container">
     <div class="row mt-3">
       <div class="col mx-auto mb-3">
         <h2>List of Movies</h2>
-          <p class="card-text">
           <form method="GET">
-            <div class="row">
+            <div class="root">
               <div class="col-auto">
                 <div class="input-group col-auto">
-                  <div class="input-group-text">
-                    Search</div>
-                  <input type="text" class="form-control"
-                    name="search">
+                    <label>
+                        <input type="text" class="node search-node" placeholder="Search for any movie"
+                          name="search">
+                    </label>
+                    <div class="branch side-branch-left"></div>
+                    <div class="branch side-branch-right"></div>
+                    <div class="branch root-branch"></div>
                 </div>
               </div>
               <div class="col-auto">
-                <button class="btn bg-dark text-white"
-                  type="submit">Search</button>
               </div>
             </div>
           </form>
-        </p>
         <hr />
       </div>
     </div>
-    <div class="row">
+    <div class="child">
       {% for movie in template_data.movies %}
       <div class="col-md-4 col-lg-3 mb-2">
         <div class="node movie-node">
@@ -38,6 +38,7 @@
             <a href="{% url 'movies.show' id=movie.id %}" class="btn bg-dark text-white">
               {{ movie.name }}
             </a>
+              <div class="branch child-branch"></div>
           </div>
         </div>
       </div>
