@@ -28,12 +28,24 @@
     </div>
     <div class="row">
       {% for movie in template_data.movies %}
-      <div class="col-md-4 col-lg-3 mb-2">
-        <div class="p-2 card align-items-center pt-4">
-          <img src="{{ movie.image.url }}" class="card-img-top rounded img-card-200" alt="">
+      <div class="col-md-4 col-lg-3 mb-3">
+        <div class="card h-100">
+          <div class="p-2">
+            <img src="{{ movie.image.url }}" 
+                class="card-img-top rounded" 
+                alt="{{ movie.name }}"
+                style="width: 100%; height: 400px; object-fit: cover;">
+          </div>
           <div class="card-body text-center">
+            <h5 class="card-title">{{ movie.name }}</h5>
+            <span class="badge bg-dark mb-2">{{ movie.rating }}</span>
+            <div class="mb-2">
+              <span class="text-warning">
+                <i class="fas fa-star"></i> {{ movie.user_rating }}/10
+              </span>
+            </div>
             <a href="{% url 'movies.show' id=movie.id %}" class="btn bg-dark text-white">
-              {{ movie.name }}
+              View Details
             </a>
           </div>
         </div>
