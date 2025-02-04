@@ -20,3 +20,6 @@ dist/
 build/
 
 media/movie_images/
+
+#database
+db.sqlite3

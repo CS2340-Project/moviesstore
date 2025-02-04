@@ -6,7 +6,7 @@ def index(request):
     if search_term:
         movies = Movie.objects.filter(name__icontains=search_term)
     else:
-        movies = Movie.objects.all()
+        movies = Movie.objects.all().prefetch_related('genres')  # Add prefetch for performance
 
     template_data = {}
     template_data['name'] = 'Movies'
@@ -14,8 +14,9 @@ def index(request):
     return render(request, 'movies/index.html',{'template_data': template_data})
 
 def show(request, id):
-    movie = Movie.objects.get(id=id);
+    movie = Movie.objects.prefetch_related('genres', 'review_set').get(id=id)
     template_data = {}
     template_data['title'] = movie.name
     template_data['movie'] = movie
+    template_data['reviews'] = movie.review_set.all()
     return render(request, 'movies/show.html', {'template_data': template_data})
