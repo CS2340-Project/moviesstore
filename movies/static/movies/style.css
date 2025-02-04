@@ -90,6 +90,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #d61212;
+    opacity: .7;
 }
 .added:hover {
     left:22%
@@ -105,6 +106,10 @@ body {
     position: absolute;
     top: 15%;
     left: 18%;
+}
+.movie_title {
+    position: relative;
+    font-weight: bold;
 }
 body {
     background-color: #202020;

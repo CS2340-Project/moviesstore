@@ -22,3 +22,9 @@ search.addEventListener("input", () => {
        child.appendChild(movie.element);
    });
 });
+const branches = document.querySelectorAll(".branch")
+if (movies.length === 0) {
+    for (let branch of branches) {
+        branch.style.display = "none"
+    }
+}
