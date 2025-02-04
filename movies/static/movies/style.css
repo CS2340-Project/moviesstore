@@ -1,0 +1,129 @@
+body {
+    background-color: #202020;
+    font-family: "Space Mono", serif;
+}
+.branch {
+    width: 25vw;
+    height: .25vw;
+    background-color: #fdfdfd;
+    position: absolute;
+}
+.side-branch-right {
+    width: 30vw;
+    position: absolute;
+    top: 115%;
+    left: 45%;
+    transform: rotate(45deg);
+}
+.side-branch-left {
+    width: 30vw;
+    position: absolute;
+    top: 115%;
+    right: 45%;
+    transform: rotate(-45deg);
+}
+.root-branch {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+}
+.child-branch {
+    position: absolute;
+    width: 2.5vw;
+    top: 103%;
+    left: 45%;
+    transform: rotate(90deg);
+}
+.node {
+    width: 20vw;
+    height: 20vw;
+    background-color: #fdfdfd;
+    border-radius:100%;
+}
+.root {
+    justify-content: center;
+    display: flex;
+}
+.child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 1vh;
+    justify-content: center;
+    justify-self: center;
+    grid-column-gap: 1.5vh;
+}
+.search-node {
+    color: #d61212;
+    margin: auto;
+    border-color: #d61212;
+    border-width: 1vh;
+    display: flex;
+    justify-items: center;
+    position: relative;
+    z-index: 2;
+}
+.movie-node {
+    background-image: url("../../static/img/movie_roll.svg");
+    background-size: 145%;
+    background-color: #2E2E2E;
+    background-position: center;
+    transition: border-radius 0.25s ease-in-out, width 0.25s ease-in-out;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+.movie-node:hover {
+    width: 13vw;
+    height: 15vw;
+    border-radius: 15%;
+    position: relative;
+    top: 10%;
+    left: 64%;
+    background-image: none;
+    background-color: #d61212;
+}
+.movie-node:hover .inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d61212;
+    opacity: .7;
+}
+.added:hover {
+    left:22%
+}
+.inner {
+    transition: background-color .2s;
+    max-height: 14vw;
+    min-height: 14vw;
+    max-width: 13vw;
+    min-width: 13vw;
+    border-radius: 15%;
+    object-fit: contain;
+    position: absolute;
+    top: 15%;
+    left: 18%;
+}
+.movie_title {
+    position: relative;
+    font-weight: bold;
+}
+body {
+    background-color: #202020;
+    font-family: "Space Mono", serif;
+}
+h2 {
+    color: #d61212;
+
+}
+p {
+    color: #fdfdfd;
+    margin: 1vh;
+    display: inline-grid;
+}
+img {
+    max-width: 100%;
+}
