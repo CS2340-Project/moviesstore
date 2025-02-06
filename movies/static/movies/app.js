@@ -1,10 +1,16 @@
-const search = document.getElementById("search");
+const search = document.querySelector(".search");
 const movieNodes = document.querySelectorAll(".movie-node");
 const movies = Array.from(movieNodes).map((node, index) => {
     return { name: node.dataset.name.toLowerCase(), element: node };
 });
+const popular = document.querySelector(".popular");
+
 search.addEventListener("input", () => {
-   searching = search.value.toLowerCase().trim()
+    popular.style.animation = "fade .2s ease-out forwards"
+     setTimeout(() => {
+        popular.style.display = "none";
+    }, 200)
+    let searching = search.value.toLowerCase().trim()
     const rankedMovies = movies.map(movie => {
         let score = 0;
         if (movie.name.startsWith(searching)) {
@@ -28,3 +34,23 @@ if (movies.length === 0) {
         branch.style.display = "none"
     }
 }
+search.addEventListener("blur", () =>{
+    search.classList.add("unfocused");
+    popular.style.animation = "fade .2s ease-out forwards"
+    popular.style.animation = "smooth-compress .2s ease-out forwards"
+     setTimeout(() => {
+        popular.style.display = "none";
+    }, 200)
+    popular.style.right = "0"
+});
+search.addEventListener("focus", () =>{
+    search.classList.remove("unfocused");
+     setTimeout(() => {
+        popular.style.display = "grid";
+    }, 5);
+    popular.style.animation = "materialize .2s ease-in forwards"
+    popular.style.animation = "smooth-widen forwards .2s ease-in"
+    popular.style.right = "4vh"
+
+
+});
