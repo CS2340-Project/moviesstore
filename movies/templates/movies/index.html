@@ -8,30 +8,39 @@
   <div class="container">
     <div class="row mt-3">
       <div class="col mx-auto mb-3">
-        <h2>List of Movies</h2>
+        <h2 class="title">Find New Movies</h2>
           <form method="GET">
             <div class="root">
               <div class="col-auto">
-                <div class="input-group col-auto">
+                <div class="input-group col-auto grid" >
                     <label>
-                        <input type="text" class="node search-node" id="search" placeholder="Search for any movie">
+                        <input type="text" class="search" placeholder="Search for any movie" autocomplete="off">
                     </label>
-                    <div class="branch side-branch-left"></div>
-                    <div class="branch side-branch-right"></div>
-                    <div class="branch root-branch"></div>
+                    <div class="popular">
+                        <p>Fan Favorites</p>
+                        {% for movie in template_data.movies %}
+                            {% if forloop.counter <= 3 %}
+                                {%if movie.user_rating > 8%}
+                                    <a href="{% url 'movies.show' id=movie.id %}">
+                                        <p class="popular-movie"> {{ movie.name }} </p>
+                                    </a>
+                                {% endif %}
+                            {% else %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
               </div>
               <div class="col-auto">
               </div>
             </div>
           </form>
-        <hr />
       </div>
     </div>
     <div class="child">
       {% for movie in template_data.movies %}
       <div class="col-md-4 col-lg-3 mb-2">
-        <div class="node movie-node" data-name="{{ movie.name }}">
+          <div class="node movie-node" data-name="{{ movie.name }}">
           <a href="{% url 'movies.show' id=movie.id %}">
             <img src="{{ movie.image.url }}" class="inner">
             <div class="card-body text-center">

@@ -1,39 +1,11 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
 body {
-    background-color: #202020;
-    font-family: "Space Mono", serif;
-}
-.branch {
-    width: 25vw;
-    height: .25vw;
-    background-color: #fdfdfd;
-    position: absolute;
-}
-.side-branch-right {
-    width: 30vw;
-    position: absolute;
-    top: 115%;
-    left: 45%;
-    transform: rotate(45deg);
-}
-.side-branch-left {
-    width: 30vw;
-    position: absolute;
-    top: 115%;
-    right: 45%;
-    transform: rotate(-45deg);
-}
-.root-branch {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) rotate(90deg);
-}
-.child-branch {
-    position: absolute;
-    width: 2.5vw;
-    top: 103%;
-    left: 45%;
-    transform: rotate(90deg);
+    background-color: white;
+    font-family: "San Francisco", system-ui;
 }
 .node {
     width: 20vw;
@@ -48,20 +20,95 @@ body {
 .child {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 1vh;
+    grid-row-gap: 2vh;
     justify-content: center;
     justify-self: center;
-    grid-column-gap: 1.5vh;
+    grid-column-gap: 2vw;
+    margin-top: 3vh;
 }
-.search-node {
+.search {
+    width: 100%;
     color: #d61212;
-    margin: auto;
     border-color: #d61212;
-    border-width: 1vh;
+    border-width: .5vh;
     display: flex;
-    justify-items: center;
     position: relative;
-    z-index: 2;
+    box-shadow:  0 4px 8px 0 rgba(255, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+input{
+    text-align: center;
+}
+@keyframes smooth-widen {
+    0%{
+        width: 100%;
+    }
+    100% {
+        width: 150%;
+    }
+}
+@keyframes smooth-compress {
+    0% {
+        width: 150%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+.search:focus {
+    animation: smooth-widen forwards .2s ease-in;
+    justify-items: center;
+    right: 4vh;
+}
+.search:focus .popular {
+    display: block;
+}
+.unfocused {
+    animation: smooth-compress .2s ease-out forwards;
+}
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes materialize {
+    0% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.popular {
+    width: 150%;
+    background-color: pink;
+    display: none;
+    position: relative;
+    opacity: .7;
+    transition: background-color 2s ease-in;
+    margin-bottom:2vh;
+}
+.popular-movie:hover {
+    color: white;
+}
+.popular-movie {
+    color: #202020;
+    width: 100%;
+    height: 100%
+}
+.grid {
+    display: grid;
+    align-items: center;
+}
+.title {
+    justify-self: center;
+    margin-bottom: 5vh;
+    font-weight: bolder;
+    background-image: linear-gradient(to right,#d61212, black );
+    color: transparent;
+    background-clip: text;
 }
 .movie-node {
     background-image: url("../../static/img/movie_roll.svg");
@@ -73,6 +120,9 @@ body {
     justify-content: center;
     display: flex;
     position: relative;
+    border-color:#d61212 ;
+    border-style: solid;
+
 }
 .movie-node:hover {
     width: 13vw;
@@ -88,32 +138,30 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    height: 14vw;
+    width: 13vw;
+    border-radius: 14%;
     transform: translate(-50%, -50%);
-    background-color: #d61212;
-    opacity: .7;
+    opacity: .9;
+    background-color: white;
+    background-image: url("../img/film_clip.png") ;
+    background-size: 14.5vw;
+    background-position-x: center;
 }
 .added:hover {
     left:22%
 }
 .inner {
     transition: background-color .2s;
-    max-height: 14vw;
-    min-height: 14vw;
-    max-width: 13vw;
-    min-width: 13vw;
-    border-radius: 15%;
-    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
     position: absolute;
-    top: 15%;
-    left: 18%;
+    left: 0px;
 }
 .movie_title {
     position: relative;
     font-weight: bold;
-}
-body {
-    background-color: #202020;
-    font-family: "Space Mono", serif;
 }
 h2 {
     color: #d61212;
