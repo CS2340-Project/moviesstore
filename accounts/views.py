@@ -1,11 +1,10 @@
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
 from . import forms
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import UserProfile
+from django.contrib.auth.models import User
 
 def forgot_password(request):
     template_data = {}
@@ -110,6 +109,13 @@ def login(request):
             auth_login(request, user)
             return redirect('home.index')
 
+@login_required
+def orders(request):
+    template_data = {}
+    template_data['title'] = 'Orders'
+    template_data['orders'] = request.user.order_set.all()
+    return render(request, 'accounts/orders.html',
+        {'template_data': template_data})
 
 @login_required
 def logout(request):
