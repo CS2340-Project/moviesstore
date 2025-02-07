@@ -9,7 +9,7 @@
     <div class="row mt-3">
       <div class="col mx-auto mb-3">
         <h2 class="title">Find New Movies</h2>
-          <form method="GET">
+          <form method="GET" onsubmit="return false;">
             <div class="root">
               <div class="col-auto">
                 <div class="input-group col-auto grid" >
@@ -40,16 +40,31 @@
     <div class="child">
       {% for movie in template_data.movies %}
       <div class="col-md-4 col-lg-3 mb-2">
-          <div class="node movie-node" data-name="{{ movie.name }}">
-          <a href="{% url 'movies.show' id=movie.id %}">
-            <img src="{{ movie.image.url }}" class="inner">
-            <div class="card-body text-center">
-                <p class="movie_title">{{ movie.name }}</p>
-              <div class="branch child-branch"></div>
-          </div> </a>
+        <div class="node movie-node" data-name="{{ movie.name }}">
+            <a href="{% url 'movies.show' id=movie.id %}">
+                <img src="{{ movie.image.url }}" class="inner">
+                <!-- Add the overlay div -->
+                <div class="movie-overlay">
+                    <h3>{{ movie.name }}</h3>
+                    <p class="rating">Rating: {{ movie.rating }}</p>
+                    <p class="duration">{{ movie.duration }} mins</p>
+                    <p class="user-rating">User Rating: {{ movie.user_rating }}/10</p>
+                    <p class="release">Released: {{ movie.release_date|date:"Y" }}</p>
+                    <p class="director">Director: {{ movie.director }}</p>
+                    <div class="genres">
+                        {% for genre in movie.genres.all %}
+                            <span class="genre-tag">{{ genre.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <p class="movie_title">{{ movie.name }}</p>
+                    <div class="branch child-branch"></div>
+                </div>
+            </a>
         </div>
-      </div>
-      {% endfor %}
+    </div>      
+    {% endfor %}
     </div>
   </div>
 </div>

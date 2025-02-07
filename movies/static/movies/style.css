@@ -4,174 +4,242 @@
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 body {
-    background-color: white;
-    font-family: "San Francisco", system-ui;
+  background-color: white;
+  font-family: "San Francisco", system-ui;
 }
 .node {
-    width: 20vw;
-    height: 20vw;
-    background-color: #fdfdfd;
-    border-radius:100%;
+  width: 20vw;
+  height: 20vw;
+  background-color: #fdfdfd;
+  border-radius: 100%;
 }
 .root {
-    justify-content: center;
-    display: flex;
+  justify-content: center;
+  display: flex;
 }
 .child {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 2vh;
-    justify-content: center;
-    justify-self: center;
-    grid-column-gap: 2vw;
-    margin-top: 3vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 2vh;
+  justify-content: center;
+  justify-self: center;
+  grid-column-gap: 2vw;
+  margin-top: 3vh;
 }
 .search {
-    width: 100%;
-    color: #d61212;
-    border-color: #d61212;
-    border-width: .5vh;
-    display: flex;
-    position: relative;
-    box-shadow:  0 4px 8px 0 rgba(255, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  color: #d61212;
+  border-color: #d61212;
+  border-width: 0.5vh;
+  display: flex;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-input{
-    text-align: center;
+input {
+  text-align: center;
 }
 @keyframes smooth-widen {
-    0%{
-        width: 100%;
-    }
-    100% {
-        width: 150%;
-    }
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 150%;
+  }
 }
 @keyframes smooth-compress {
-    0% {
-        width: 150%;
-    }
-    100% {
-        width: 100%;
-    }
+  0% {
+    width: 150%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 .search:focus {
-    animation: smooth-widen forwards .2s ease-in;
-    justify-items: center;
-    right: 4vh;
+  animation: smooth-widen forwards 0.2s ease-in;
+  justify-items: center;
+  right: 4vh;
 }
 .search:focus .popular {
-    display: block;
+  display: block;
 }
 .unfocused {
-    animation: smooth-compress .2s ease-out forwards;
+  animation: smooth-compress 0.2s ease-out forwards;
 }
 @keyframes fade {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @keyframes materialize {
-    0% {
-        opacity: .5;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .popular {
-    width: 150%;
-    background-color: pink;
-    display: none;
-    position: relative;
-    opacity: .7;
-    transition: background-color 2s ease-in;
-    margin-bottom:2vh;
+  width: 150%;
+  background-color: pink;
+  display: none;
+  position: relative;
+  opacity: 0.7;
+  transition: background-color 2s ease-in;
+  margin-bottom: 2vh;
 }
 .popular-movie:hover {
-    color: white;
+  color: white;
 }
 .popular-movie {
-    color: #202020;
-    width: 100%;
-    height: 100%
+  color: #202020;
+  width: 100%;
+  height: 100%;
 }
 .grid {
-    display: grid;
-    align-items: center;
+  display: grid;
+  align-items: center;
 }
 .title {
-    justify-self: center;
-    margin-bottom: 5vh;
-    font-weight: bolder;
-    background-image: linear-gradient(to right,#d61212, black );
-    color: transparent;
-    background-clip: text;
+  justify-self: center;
+  margin-bottom: 5vh;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #d61212, black);
+  color: transparent;
+  background-clip: text;
 }
 .movie-node {
-    background-image: url("../../static/img/movie_roll.svg");
-    background-size: 145%;
-    background-color: #2E2E2E;
-    background-position: center;
-    transition: border-radius 0.25s ease-in-out, width 0.25s ease-in-out;
-    align-content: center;
-    justify-content: center;
-    display: flex;
-    position: relative;
-    border-color:#d61212 ;
-    border-style: solid;
-
+  background-image: url("../../static/img/movie_roll.svg");
+  background-size: 145%;
+  background-color: #2e2e2e;
+  background-position: center;
+  transition: border-radius 0.25s ease-in-out, width 0.25s ease-in-out;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  border-color: #d61212;
+  border-style: solid;
+  overflow: hidden;
 }
 .movie-node:hover {
-    width: 13vw;
-    height: 15vw;
-    border-radius: 15%;
-    position: relative;
-    top: 10%;
-    left: 64%;
-    background-image: none;
-    background-color: #d61212;
+  width: 13vw;
+  height: 15vw;
+  border-radius: 15%;
+  position: relative;
+  top: 10%;
+  left: 64%;
+  background-image: none;
+  background-color: #d61212;
 }
-.movie-node:hover .inner{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 14vw;
-    width: 13vw;
-    border-radius: 14%;
-    transform: translate(-50%, -50%);
-    opacity: .9;
-    background-color: white;
-    background-image: url("../img/film_clip.png") ;
-    background-size: 14.5vw;
-    background-position-x: center;
+
+.movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(214, 18, 18, 0.9); /* Using your #d61212 theme color */
+  color: white;
+  padding: 1rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: inherit; /* This will match parent's border-radius */
+  text-align: center;
+  z-index: 2;
 }
+
+.movie-node:hover .movie-overlay {
+  opacity: 1;
+}
+
+.movie-overlay h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.movie-overlay p {
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+  color: #fff;
+  display: block; /* Override your existing p styles */
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.genre-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  color: #fff;
+}
+
+/* Modify your existing hover styles */
+.movie-node:hover {
+  width: 13vw;
+  height: 15vw;
+  border-radius: 15%;
+  position: relative;
+  top: 10%;
+  left: 64%;
+  background-image: none;
+  background-color: #d61212;
+}
+.movie-node:hover .inner {
+  opacity: 0.9;
+}
+@keyframes overlay-fade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.movie-node:hover .movie-overlay {
+  animation: overlay-fade 0.3s ease forwards;
+}
+
 .added:hover {
-    left:22%
+  left: 22%;
 }
 .inner {
-    transition: background-color .2s;
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
-    position: absolute;
-    left: 0px;
+  transition: background-color 0.2s;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  position: absolute;
+  left: 0px;
 }
 .movie_title {
-    position: relative;
-    font-weight: bold;
+  position: relative;
+  font-weight: bold;
 }
 h2 {
-    color: #d61212;
-
+  color: #d61212;
 }
 p {
-    color: #fdfdfd;
-    margin: 1vh;
-    display: inline-grid;
+  color: #fdfdfd;
+  margin: 1vh;
+  display: inline-grid;
 }
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
