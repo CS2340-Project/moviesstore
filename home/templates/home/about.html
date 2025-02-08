@@ -2,17 +2,20 @@
 {% block content %}
 {% load static %}
 {% block extra_css %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static "about/style.css"%}">
-    <script defer src="{% static "about/app.js" %}"></script>
-    <section class="hidden">
+    <script src="{% static "about/app.js" %}" defer></script>
+<div class="p-3">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col mx-auto mb-3">
+        <h2 class="title">About Us</h2>
+      </div>
+    </div>
+      <section class="hidden">
         <div id="login-container">
 
-        </div>>
-        <h2 class="caption">What Are We?</h2>
-        <p> At Movies Store, we offer a vast digital library
+        </div>
+        <p class="caption"> At Movies Store, we offer a vast digital library
            that spans across genres, ensuring there's
            something for every movie lover. Browse our
            extensive collection of films, including the
@@ -25,15 +28,15 @@
         <div class="thumbnail-holder hidden">
             <div class="thumbnail thumbnail-left"><img src="{% static "/about/img/film.png" %}" alt="film_roll"></div>
         </div>
-        <div class="thumbnail-holder hidden" onclick="popUp()">
-            <div class="thumbnail thumbnail-center"><a href="/"><img src="{% static "/about/img/play.png" %}" alt="play_button"></a></div>
+        <div class="thumbnail-holder hidden" >
+            <div class="thumbnail thumbnail-center"><a href="/movies"> <img src="{% static "/about/img/play_button.png" %}" alt="play_button"> <p class="action">browse now!</p> </a></div>
         </div>
         <div class="thumbnail-holder hidden">
             <div class="thumbnail thumbnail-right"><img src="{% static "/about/img/film.png" %}" alt="film_roll">
             </div>
         </div>
         </div>
-        <p>
+        <p class="caption">
         Discover the convenience of our digital platform,
         where you have the flexibility to watch movies
         on your preferred device, whether it's a smart
@@ -42,5 +45,7 @@
         next movie night pick has never been easier.
     </p>
     </section>
+      </div>
+    </div>
 {% endblock extra_css %}
 {% endblock content %}

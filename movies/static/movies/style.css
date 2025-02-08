@@ -102,13 +102,23 @@ input {
   display: grid;
   align-items: center;
 }
+@keyframes shimmer {
+    from {
+      background-position: 0;
+    }
+    to {
+      background-position: -100%;
+    }
+}
 .title {
   justify-self: center;
   margin-bottom: 5vh;
   font-weight: bolder;
-  background-image: linear-gradient(to right, #d61212, black);
+  background-image: linear-gradient(to right, black, #d61212);
   color: transparent;
   background-clip: text;
+  animation: shimmer 1.5s forwards;
+  background-size: 200%;
 }
 .movie-node {
   background-image: url("../../static/img/movie_roll.svg");

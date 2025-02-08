@@ -1,13 +1,18 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
 body {
-    background-color: #202020;
-    font-family: "Space Mono", serif;
+  background-color: white;
+  font-family: "San Francisco", system-ui;
 }
 h2 {
     color: #d61212;
 
 }
 p {
-    color: #fdfdfd;
+    color: #000000;
     margin: 1vh;
     display: inline-grid;
 }
@@ -25,6 +30,27 @@ section {
 .show {
     opacity: 1;
 }
+.action {
+    justify-self: center;
+}
+@keyframes shimmer {
+    from {
+      background-position: 0;
+    }
+    to {
+      background-position: -100%;
+    }
+}
+.title {
+  justify-self: center;
+  margin-bottom: 5vh;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, black, #d61212);
+  color: transparent;
+  background-clip: text;
+  animation: shimmer 1.5s forwards;
+  background-size: 200%;
+}
 .thumbnail-holder {
     overflow: hidden;
     display: inline-block;
@@ -34,10 +60,10 @@ section {
     border: .25vw solid #fdfdfd;
 }
 .thumbnail-left {
-    animation: spin 2s linear infinite;
+    animation: stop-left 1s;
 }
 .thumbnail-right {
-    animation: spin-anti 2s linear infinite;
+    animation: stop-right 1s;
     transform: translateY(-500%);
 }
 .thumbnail-center {
@@ -49,18 +75,22 @@ section {
 
 }
 #slot-machine:hover .thumbnail-left {
-    animation: stop-left 1s;
+    animation: spin 2s linear infinite;
 }
 #slot-machine:hover .thumbnail-right{
-    animation: stop-right 1s;
+    animation: spin-anti 2s linear infinite;
 }
 .thumbnail-center:hover {
     cursor: pointer;
     opacity: .5;
     animation: zoom 1s;
-    transform: scale(150%);
-}
+    transform: scale(120%);
 
+}
+.caption {
+    font-weight: bolder;
+    font-size: 2.5vh;
+}
 @keyframes spin {
     0% {
         transform: translateY(0);
@@ -99,7 +129,7 @@ section {
         transform: scale(100%);
     }
     100% {
-        transform: scale(150%)
+        transform: scale(120%)
     }
 
 }
