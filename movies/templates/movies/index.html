@@ -4,6 +4,7 @@
 {% block extra_css %}
     <link rel="stylesheet" href="{% static "movies/style.css"%}">
     <script src="{% static "movies/app.js" %}" defer></script>
+{% endblock extra_css %}
 <div class="p-3">
   <div class="container">
     <div class="row mt-3">
@@ -13,8 +14,8 @@
             <div class="root">
               <div class="col-auto">
                 <div class="input-group col-auto grid">
-                    <label>
-                        <input type="text" class="search" placeholder="Search for any movie" autocomplete="off">
+                    <label style="display: flex">
+                        <input type="text" class="search"  name="search" placeholder="Search for any movie" autocomplete="off">
                         <button class="btn bg-dark text-white" type="submit">Search</button>
                     </label>
                     <div class="popular">
@@ -54,5 +55,4 @@
     </div>
   </div>
 </div>
-{% endblock extra_css %}
 {% endblock content %}
