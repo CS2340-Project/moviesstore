@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+body {
+  background-color: white;
+  font-family: "San Francisco", system-ui;
+}
+.title {
+  justify-self: center;
+  margin-bottom: 5vh;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, black, #d61212);
+  color: transparent;
+  background-clip: text;
+  animation: shimmer 1.5s forwards;
+  background-size: 200%;
+}
+@keyframes shimmer {
+    from {
+      background-position: 0;
+    }
+    to {
+      background-position: -100%;
+    }
+}
+.posters {
+    width: 13vh;
+    height: 16vh;
+}
