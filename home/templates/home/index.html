@@ -3,6 +3,7 @@
     {% load static %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static "home/style.css" %}">
+{% endblock extra_css %}
 <header class="masthead bg-index text-white text-center py-4">
   <div class="container d-flex align-items-center flex-column pt-2">
     <h2>Movies Store</h2>
@@ -13,10 +14,26 @@
   <div class="container">
     <div class="row mt-3">
       <div class="col mx-auto text-center mb-3">
-        <h1>Welcome to the best movie store!!</h1>
+        <h1 class="title">Welcome to the best movie store!!</h1>
+          <div class="main">
+              <div class="movie-section card">
+                  <p class="header">Find the movies you love</p>
+                  <div class="find-movies">
+                  <img class= "movie-grid" src="{% static "/home/img/many_movies.png" %}">
+                      <img class= "magnify" src="{% static "/home/img/maginify.png" %}">
+                  </div>
+              </div>
+              <div class="review-section card">
+                  <p class="header">Engage with community reviews</p>
+                  <div class="reviews">
+                      <p class="typewriter">Awesome movie 😀 ⭐⭐⭐⭐⭐</p>
+                      <p class="typewriter">Loved it so much!! 👍❤️</p>
+                      <p class="typewriter">I can't wait for the sequel 😲</p>
+                  </div>
+              </div>
+          </div>
       </div>
     </div>
   </div>
 </div>
-{% endblock extra_css %}
 {% endblock content %}
