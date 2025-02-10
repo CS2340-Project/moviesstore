@@ -82,7 +82,7 @@ input {
   }
 }
 .popular {
-  width: 150%;
+  width: 120%;
   background-color: pink;
   display: none;
   position: relative;
@@ -102,13 +102,26 @@ input {
   display: grid;
   align-items: center;
 }
+@keyframes shimmer {
+    from {
+      background-position: 0;
+    }
+    to {
+      background-position: -100%;
+    }
+}
+.search-segment {
+  display: flex;
+}
 .title {
   justify-self: center;
   margin-bottom: 5vh;
   font-weight: bolder;
-  background-image: linear-gradient(to right, #d61212, black);
+  background-image: linear-gradient(to right, black, #d61212);
   color: transparent;
   background-clip: text;
+  animation: shimmer 1.5s forwards;
+  background-size: 200%;
 }
 .movie-node {
   background-image: url("../../static/img/movie_roll.svg");
@@ -216,7 +229,17 @@ input {
 .movie-node:hover .movie-overlay {
   animation: overlay-fade 0.3s ease forwards;
 }
-
+section {
+    place-items: center;
+    margin: auto;
+}
+.hidden {
+    opacity: 0;
+    transition: all 1.5s;
+}
+.show {
+    opacity: 1;
+}
 .added:hover {
   left: 22%;
 }

@@ -3,7 +3,7 @@ from .models import Movie, Review
 from django.contrib.auth.decorators import login_required
 
 def index(request):
-    search_term = request.GET.get('search_term')
+    search_term = request.GET.get('search')
     if search_term:
         movies = Movie.objects.filter(name__icontains=search_term)
     else:
