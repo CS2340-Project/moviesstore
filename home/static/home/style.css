@@ -1,6 +1,7 @@
 body {
     background-color: white;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
 }
 section {
     place-items: center;
@@ -10,3 +11,134 @@ h1 {
     font-weight: bold;
     font-size: xx-large;
 }
+.main {
+    display: flex;
+    justify-items: center;
+    gap: 5vw;
+    justify-self: center;
+}
+.find-movies, .review-section {
+    flex: 1;
+    width: 35vw;
+
+}
+.movie-grid {
+    width: 80%;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+}
+.magnify {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    z-index: 1;
+    animation: find 5s linear forwards;
+}
+@keyframes find {
+    0% {
+        transform: translate(-10%, 1%);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(-50%, 10%);
+    }
+    40% {
+        transform: translate(-80%, 25%);
+        }
+    100% {
+        transform: translate(-10%, 55%);
+        opacity: 0;
+    }
+}
+.card {
+    border-radius: 15px ;
+    border-width: 5px;
+}
+.reviews {
+    display: grid;
+}
+.reviews .typewriter:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.reviews .typewriter:nth-child(2) {
+    animation-delay: 3.5s;
+}
+
+.reviews .typewriter:nth-child(3) {
+    animation-delay: 7s;
+}
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    margin-top: 5vh ;
+    animation: typing 3.5s steps(30, end), show .5s forwards;
+    opacity: 0;
+    font-weight: bold;
+}
+.title {
+  justify-self: center;
+  margin-bottom: 5vh;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, black, #d61212);
+  color: transparent;
+  background-clip: text;
+  animation: shimmer 1.5s forwards;
+  background-size: 200%;
+}
+@keyframes shimmer {
+    from {
+      background-position: 0;
+    }
+    to {
+      background-position: -100%;
+    }
+}
+.header {
+    font-weight: bold;
+    font-size: large;
+    margin-top: 10px;
+}
+@media screen and (max-width: 600px) {
+    .main {
+        flex-direction: column;
+        gap: 5vh;
+    }
+
+    .find-movies, .review-section {
+        width: 90vw;
+        height: auto;
+    }
+
+    .typewriter {
+        font-size: 1rem;
+    }
+}
+
+@keyframes typing {
+  from {
+      width: 0
+  }
+  to {
+      width: 50%
+  }
+}
+@keyframes show {
+  from {
+      opacity: 0;
+      border: none;
+  }
+    to {
+        opacity: 1;
+        border-color: #7F7F7F;
+        border-radius: 15px;
+        border-style: solid;
+        background-color: #7F7F7F;
+        padding: 10px 20px;
+    }
+}
+
+
+

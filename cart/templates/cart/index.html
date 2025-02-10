@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+    {% block extra_css %}
+        <link rel="stylesheet" href="{% static "cart/style.css"%}">
+    {% endblock extra_css %}
 {% load cart_filters %}
 <div class="p-3">
   <div class="container">
     <div class="row mt-3">
       <div class="col mx-auto mb-3">
-        <h2>Shopping Cart</h2>
-        <hr />
+        <h2 class="title">Shopping Cart</h2>
+        <hr/>
       </div>
     </div>
     <div class="row m-1">
@@ -15,6 +18,7 @@
         text-center">
         <thead>
           <tr>
+              <th scope="col">Image</th>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Price</th>
@@ -24,6 +28,11 @@
         <tbody>
           {% for movie in template_data.movies_in_cart %}
           <tr>
+              <td><img
+          src="{{ movie.image.url }}"
+          class="rounded img-fluid posters"
+          alt="{{ movie.name }}"
+        /></td>
             <td>{{ movie.id }}</td>
             <td>{{ movie.name }}</td>
             <td>${{ movie.price }}</td>
