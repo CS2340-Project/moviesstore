@@ -4,7 +4,7 @@
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 body {
-  background-color: white;
+  background-color: lightblue;
   font-family: "San Francisco", system-ui;
 }
 .node {
@@ -103,12 +103,12 @@ input {
   align-items: center;
 }
 @keyframes shimmer {
-    from {
-      background-position: 0;
-    }
-    to {
-      background-position: -100%;
-    }
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -100%;
+  }
 }
 .search-segment {
   display: flex;
@@ -230,15 +230,15 @@ input {
   animation: overlay-fade 0.3s ease forwards;
 }
 section {
-    place-items: center;
-    margin: auto;
+  place-items: center;
+  margin: auto;
 }
 .hidden {
-    opacity: 0;
-    transition: all 1.5s;
+  opacity: 0;
+  transition: all 1.5s;
 }
 .show {
-    opacity: 1;
+  opacity: 1;
 }
 .added:hover {
   left: 22%;

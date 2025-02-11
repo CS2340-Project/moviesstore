@@ -4,7 +4,7 @@
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 body {
-  background-color: white;
+  background-color: lightblue;
   font-family: "San Francisco", system-ui;
 }
 .title {
@@ -18,14 +18,14 @@ body {
   background-size: 200%;
 }
 @keyframes shimmer {
-    from {
-      background-position: 0;
-    }
-    to {
-      background-position: -100%;
-    }
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -100%;
+  }
 }
 .posters {
-    width: 13vh;
-    height: 16vh;
+  width: 13vh;
+  height: 16vh;
 }
